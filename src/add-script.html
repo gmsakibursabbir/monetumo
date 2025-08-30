@@ -335,7 +335,7 @@
           <div class="flex flex-col space-y-3">
             <a
               href="#"
-              class="block text-base text-[#0DB368] hover:text-[#9EA4B4] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
+              class="block text-lg text-[#0DB368] hover:text-[#9EA4B4] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 17"
@@ -382,7 +382,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-lg text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -419,7 +419,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-lg text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -496,7 +496,7 @@
           <div class="flex flex-col space-y-4">
             <a
               href="#"
-              class="block text-base text-[#0DB368] hover:text-[#9EA4B4] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
+              class="block text-base text-[#0DB368] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 17"
@@ -543,7 +543,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -580,7 +580,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -759,12 +759,12 @@
                   rows="6"
                   placeholder='&lt;meta rel="preload" href="https://cdn.example.com/script.js" as="script"&gt;
 &lt;script defer src="https://cdn.example.com/script.js"&gt;&lt;/script&gt;'
-                  class="w-full rounded-md border border-[#BEC2CC] px-3 py-3 text-sm md:text-base text-[#BEC2CC] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent resize-none"
+                  class="w-full rounded-md border border-[#BEC2CC] px-3 py-3 text-sm md:text-base text-[#243C53] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent resize-none copy-text"
                 ></textarea>
 
                 <button
                   class="copy-btn absolute bottom-4 right-2 flex items-center text-sm transition"
-                  data-target="codeArea"
+                  type="button"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -790,6 +790,12 @@
                   </svg>
                 </button>
               </div>
+
+              <!-- Toast -->
+              <div
+                id="toast"
+                class="fixed bottom-5 right-5 bg-white shadow-lg rounded-lg px-4 py-2 text-sm text-[#243C53] opacity-0 pointer-events-none transition-opacity duration-300"
+              ></div>
             </div>
             <!-- 2 -->
             <div class="w-full bg-[#ffffff] rounded-2xl p-4 md:p-[28px]">
@@ -825,13 +831,11 @@
             class="flex flex-col md:flex-row items-center md:justify-end gap-3 w-full mt-6"
           >
             <button
-              onclick="openModal('exampleModal')"
               class="bg-[#9EA4B4] hover:bg-[#000000] w-full md:w-[134px] text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg order-2 lg:order-1"
             >
               Back
             </button>
             <button
-              onclick="openModal('exampleModal')"
               class="bg-[#0DB368] hover:bg-green-600 w-full md:w-[134px] text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg order-1 lg:order-2"
             >
               Next
@@ -932,9 +936,25 @@
     <script>
       const toast = document.getElementById("toast");
 
-      // Reusable function
-      function showToast(message) {
-        toast.textContent = message;
+      function showToast(message, type = "success") {
+        let icon = "";
+
+        if (type === "success") {
+          icon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+        <path d="M4.99997 8.58603L1.70697 5.29303L0.292969 6.70703L4.99997 11.414L14.707 1.70703L13.293 0.29303L4.99997 8.58603Z" fill="#0DB368"/>
+      </svg>
+      `;
+        } else if (type === "error") {
+          icon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+      `;
+        }
+
+        toast.innerHTML = `<div class="flex items-center gap-2">${icon}<span>${message}</span></div>`;
         toast.classList.remove("opacity-0", "pointer-events-none");
         toast.classList.add("opacity-100");
 
@@ -944,13 +964,20 @@
         }, 2000);
       }
 
-      // Attach to all copy buttons
+      // Works for multiple inputs
       document.querySelectorAll(".copy-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
-          const text = btn.querySelector(".copy-text").textContent;
-          navigator.clipboard.writeText(text).then(() => {
-            showToast(`✅ "${text}" copied!`);
-          });
+          const textarea = btn.closest(".relative").querySelector(".copy-text"); // find sibling textarea
+          const text = textarea.value;
+
+          navigator.clipboard
+            .writeText(text)
+            .then(() => {
+              showToast("Copied to clipboard!", "success");
+            })
+            .catch(() => {
+              showToast("Failed to copy!", "error");
+            });
         });
       });
     </script>

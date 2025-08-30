@@ -335,7 +335,7 @@
           <div class="flex flex-col space-y-3">
             <a
               href="#"
-              class="block text-base text-[#0DB368] hover:text-[#9EA4B4] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
+              class="block text-lg text-[#0DB368] hover:text-[#9EA4B4] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 17"
@@ -382,7 +382,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-lg text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -419,7 +419,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-lg text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -496,7 +496,7 @@
           <div class="flex flex-col space-y-4">
             <a
               href="#"
-              class="block text-base text-[#0DB368] hover:text-[#9EA4B4] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
+              class="block text-base text-[#0DB368] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] bg-[rgb(13_179_104_/_6%)]"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 17"
@@ -543,7 +543,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -580,7 +580,7 @@
             >
             <a
               href="#"
-              class="block text-lg hover:text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
+              class="block text-base text-[#9EA4B4] hover:text-[#0DB368] group px-4 py-2 rounded-[4px] hover:bg-[rgb(13_179_104_/_6%)]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -781,7 +781,11 @@
               </div>
               <!-- Tab Content -->
               <div class="w-full">
-                <div class="tab-content w-full hidden space-y-6" id="apache">
+                <!-- 1 -->
+                <div
+                  class="tab-content w-full hidden space-y-6 validator-group"
+                  id="apache"
+                >
                   <!-- content -->
                   <div
                     class="w-full p-5 md:px-10 md:py-[28px] bg-[rgba(230_239_247/_0.40)] rounded-xl"
@@ -800,14 +804,12 @@
                         <div class="relative w-full">
                           <input
                             type="text"
-                            id="websiteDomain"
-                            placeholder="Enter your website domain"
-                            class="w-full rounded-md px-3 py-4 pr-12 text-base text-[#243C53] border border-[#BEC2CC] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent flex-1"
+                            placeholder="https://ads.monetumo.com/yourdomain.txt"
+                            class="websiteDomain w-full rounded-md px-3 py-4 pr-12 text-base text-[#243C53] border border-[#BEC2CC] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent flex-1"
                           />
 
                           <button
                             class="copy-btn absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center justify-center text-[#0DB368] p-1"
-                            data-target="websiteDomain"
                           >
                             <!-- Copy SVG -->
                             <svg
@@ -850,20 +852,22 @@
                     class="flex flex-col md:flex-row items-center justify-end gap-3 md:gap-6 w-full"
                   >
                     <p
-                      class="text-[#0DB368] font-medium text-sm order-2 md:order-1"
+                      class="ads-msg hidden text-[#0DB368] font-medium text-sm order-2 md:order-1"
                     >
                       Checking the ads.txt redirect…
                     </p>
                     <button
-                      onclick="openModal('exampleModal')"
-                      class="bg-[#0DB368] hover:bg-green-600 text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg w-full md:w-auto order-1 md:order-2"
+                      class="validateBtn bg-[#0DB368] hover:bg-green-600 text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg w-full md:w-auto order-1 md:order-2"
                     >
                       Validate the change
                     </button>
                   </div>
                 </div>
-
-                <div class="tab-content w-full hidden space-y-6" id="nginx">
+                <!-- 2 -->
+                <div
+                  class="tab-content w-full hidden space-y-6 validator-group"
+                  id="nginx"
+                >
                   <!-- content -->
                   <div
                     class="w-full p-5 md:px-10 md:py-[28px] bg-[rgba(230_239_247/_0.40)] rounded-xl"
@@ -882,14 +886,12 @@
                         <div class="relative w-full">
                           <input
                             type="text"
-                            id="websiteDomain"
-                            placeholder="Enter your website domain"
-                            class="w-full rounded-md px-3 py-4 pr-12 text-base text-[#243C53] border border-[#BEC2CC] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent flex-1"
+                            placeholder="https://ads.monetumo.com/yourdomain.txt"
+                            class="websiteDomain w-full rounded-md px-3 py-4 pr-12 text-base text-[#243C53] border border-[#BEC2CC] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent flex-1"
                           />
 
                           <button
                             class="copy-btn absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center justify-center text-[#0DB368] p-1"
-                            data-target="websiteDomain"
                           >
                             <!-- Copy SVG -->
                             <svg
@@ -932,20 +934,22 @@
                     class="flex flex-col md:flex-row items-center justify-end gap-3 md:gap-6 w-full"
                   >
                     <p
-                      class="text-[#0DB368] font-medium text-sm order-2 md:order-1"
+                      class="ads-msg hidden text-[#0DB368] font-medium text-sm order-2 md:order-1"
                     >
                       Checking the ads.txt redirect…
                     </p>
                     <button
-                      onclick="openModal('exampleModal')"
-                      class="bg-[#0DB368] hover:bg-green-600 text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg w-full md:w-auto order-1 md:order-2"
+                      class="validateBtn bg-[#0DB368] hover:bg-green-600 text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg w-full md:w-auto order-1 md:order-2"
                     >
                       Validate the change
                     </button>
                   </div>
                 </div>
-
-                <div class="tab-content w-full hidden space-y-6" id="manual">
+                <!-- 3 -->
+                <div
+                  class="tab-content w-full hidden space-y-6 validator-group"
+                  id="manual"
+                >
                   <!-- content -->
                   <div
                     class="w-full p-5 md:px-10 md:py-[28px] bg-[rgba(230_239_247/_0.40)] rounded-xl"
@@ -964,14 +968,12 @@
                         <div class="relative w-full">
                           <input
                             type="text"
-                            id="websiteDomain"
-                            placeholder="Enter your website domain"
-                            class="w-full rounded-md px-3 py-4 pr-12 text-base text-[#243C53] border border-[#BEC2CC] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent flex-1"
+                            placeholder="https://ads.monetumo.com/yourdomain.txt"
+                            class="websiteDomain w-full rounded-md px-3 py-4 pr-12 text-base text-[#243C53] border border-[#BEC2CC] placeholder:text-[#BEC2CC] focus:outline-none focus:ring-2 focus:ring-[#0DB368] focus:border-transparent flex-1"
                           />
 
                           <button
                             class="copy-btn absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center justify-center text-[#0DB368] p-1"
-                            data-target="websiteDomain"
                           >
                             <!-- Copy SVG -->
                             <svg
@@ -1014,13 +1016,12 @@
                     class="flex flex-col md:flex-row items-center justify-end gap-3 md:gap-6 w-full"
                   >
                     <p
-                      class="text-[#0DB368] font-medium text-sm order-2 md:order-1"
+                      class="ads-msg hidden text-[#0DB368] font-medium text-sm order-2 md:order-1"
                     >
                       Checking the ads.txt redirect…
                     </p>
                     <button
-                      onclick="openModal('exampleModal')"
-                      class="bg-[#0DB368] hover:bg-green-600 text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg w-full md:w-auto order-1 md:order-2"
+                      class="validateBtn bg-[#0DB368] hover:bg-green-600 text-[#ffffff] px-6 py-[10px] text-base font-medium rounded-lg w-full md:w-auto order-1 md:order-2"
                     >
                       Validate the change
                     </button>
@@ -1032,7 +1033,11 @@
         </section>
       </main>
     </div>
-
+    <!-- Toast -->
+    <div
+      id="toast"
+      class="fixed bottom-5 right-5 bg-white border border-[#BEC2CC] text-[#243C53] px-4 py-2 rounded-md shadow-md opacity-0 pointer-events-none transition-all duration-300"
+    ></div>
     <!-- js -->
 
     <script>
@@ -1122,31 +1127,6 @@
       });
     </script>
     <script>
-      const toast = document.getElementById("toast");
-
-      // Reusable function
-      function showToast(message) {
-        toast.textContent = message;
-        toast.classList.remove("opacity-0", "pointer-events-none");
-        toast.classList.add("opacity-100");
-
-        setTimeout(() => {
-          toast.classList.remove("opacity-100");
-          toast.classList.add("opacity-0", "pointer-events-none");
-        }, 2000);
-      }
-
-      // Attach to all copy buttons
-      document.querySelectorAll(".copy-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const text = btn.querySelector(".copy-text").textContent;
-          navigator.clipboard.writeText(text).then(() => {
-            showToast(`✅ "${text}" copied!`);
-          });
-        });
-      });
-    </script>
-    <script>
       const buttons = document.querySelectorAll(".tab-btn");
       const contents = document.querySelectorAll(".tab-content");
 
@@ -1186,6 +1166,130 @@
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
           activateTab(btn.dataset.tab);
+        });
+      });
+    </script>
+    <script>
+      // Select all input groups
+      const groups = document.querySelectorAll(".validator-group");
+
+      groups.forEach((group) => {
+        const input = group.querySelector(".websiteDomain");
+        const adsMsg = group.querySelector(".ads-msg");
+        const validateBtn = group.querySelector(".validateBtn");
+
+        function setButtonState(disabled) {
+          if (disabled) {
+            validateBtn.disabled = true;
+            validateBtn.classList.remove(
+              "bg-[#0DB368]",
+              "hover:bg-green-600",
+              "text-[#ffffff]"
+            );
+            validateBtn.classList.add("bg-[#BEC2CC]", "text-[#6A6E79]");
+          } else {
+            validateBtn.disabled = false;
+            validateBtn.classList.remove("bg-[#BEC2CC]", "text-[#6A6E79]");
+            validateBtn.classList.add(
+              "bg-[#0DB368]",
+              "hover:bg-green-600",
+              "text-[#ffffff]"
+            );
+          }
+        }
+
+        function validateAdsTxt(url) {
+          const txtRegex = /^https?:\/\/.+\.txt$/i;
+          adsMsg.classList.remove("hidden");
+          adsMsg.textContent = "Checking the ads.txt redirect…";
+          adsMsg.classList.remove("text-red-500");
+          adsMsg.classList.add("text-[#0DB368]");
+
+          setButtonState(true);
+
+          if (txtRegex.test(url)) {
+            setTimeout(() => {
+              adsMsg.textContent = "Checking complete!";
+              adsMsg.classList.remove("text-red-500");
+              adsMsg.classList.add("text-[#0DB368]");
+              setButtonState(false);
+            }, 1500);
+          } else {
+            setTimeout(() => {
+              adsMsg.textContent =
+                "The redirect was not in place. Please try again.";
+              adsMsg.classList.remove("text-[#0DB368]");
+              adsMsg.classList.add("text-red-500");
+              setButtonState(false);
+            }, 1000);
+          }
+        }
+
+        // Validate on button click
+        validateBtn.addEventListener("click", () => {
+          const url = input.value.trim();
+          if (url) {
+            validateAdsTxt(url);
+          }
+        });
+
+        // Auto validate on paste
+        input.addEventListener("paste", () => {
+          setTimeout(() => {
+            const url = input.value.trim();
+            if (url) {
+              validateAdsTxt(url);
+            }
+          }, 100);
+        });
+      });
+    </script>
+
+    <script>
+      const toast = document.getElementById("toast");
+
+      function showToast(message, type = "success") {
+        let icon = "";
+
+        if (type === "success") {
+          icon = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+          <path d="M4.99997 8.58603L1.70697 5.29303L0.292969 6.70703L4.99997 11.414L14.707 1.70703L13.293 0.29303L4.99997 8.58603Z" fill="#0DB368"/>
+        </svg>`;
+        } else if (type === "error") {
+          icon = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>`;
+        }
+
+        toast.innerHTML = `<div class="flex items-center gap-2">${icon}<span>${message}</span></div>`;
+        toast.classList.remove("opacity-0", "pointer-events-none");
+        toast.classList.add("opacity-100");
+
+        setTimeout(() => {
+          toast.classList.remove("opacity-100");
+          toast.classList.add("opacity-0", "pointer-events-none");
+        }, 2000);
+      }
+
+      // Copy for multiple inputs with .websiteDomain
+      document.querySelectorAll(".copy-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const input = btn.closest("div").querySelector(".websiteDomain");
+
+          if (input) {
+            const text = input.value;
+            navigator.clipboard
+              .writeText(text)
+              .then(() => {
+                showToast(`✅ Copied: ${text}`, "success");
+              })
+              .catch(() => {
+                showToast("❌ Failed to copy!", "error");
+              });
+          }
         });
       });
     </script>
